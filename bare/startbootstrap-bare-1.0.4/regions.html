@@ -1,0 +1,134 @@
+<script type="text/javascript">
+$(function () {
+
+
+	// Original link : http://jsfiddle.net/gh/get/jquery/1.11.0/highslide-software/highcharts.com/tree/master/samples/mapdata/countries/fr/custom/fr-all-mainland
+    // Prepare demo data
+    var data = [
+        {
+            "hc-key": "fr-t",
+            "value": 39.8
+        },
+        {
+            "hc-key": "fr-e",
+            "value": 38.8
+        },
+        {
+            "hc-key": "fr-r",
+            "value": 43.5
+        },
+        {
+            "hc-key": "fr-u",
+            "value": 38.3
+        },
+        {
+            "hc-key": "fr-n",
+            "value": 42.4
+        },
+        {
+            "hc-key": "fr-p",
+            "value": 36
+        },
+        {
+            "hc-key": "fr-o",
+            "value": 30.3
+        },
+        {
+            "hc-key": "fr-v",
+            "value": 37.8
+        },
+        {
+            "hc-key": "fr-s",
+            "value": 28.7
+        },
+        {
+            "hc-key": "fr-g",
+            "value": 31.6
+        },
+        {
+            "hc-key": "fr-k",
+            "value": 41.6
+        },
+        {
+            "hc-key": "fr-a",
+            "value": 39.2
+        },
+        {
+            "hc-key": "fr-c",
+            "value": 37.5
+        },
+        {
+            "hc-key": "fr-f",
+            "value": 34.8
+        },
+        {
+            "hc-key": "fr-l",
+            "value": 35.4
+        },
+        {
+            "hc-key": "fr-d",
+            "value": 39.8
+        },
+        {
+            "hc-key": "fr-b",
+            "value": 38.2
+        },
+        {
+            "hc-key": "fr-i",
+            "value": 39.6
+        },
+        {
+            "hc-key": "fr-q",
+            "value": 34.9
+        },
+        {
+            "hc-key": "fr-j",
+            "value": 36
+        },
+        {
+            "hc-key": "fr-m",
+            "value": 31.9
+        }
+    ];
+    // Initiate the chart
+    $('#regions').highcharts('Map', {
+    
+        title : {
+            text : 'Régions ayant le plus de consommateurs hebdomadaires de vin'
+        },
+
+        subtitle : {
+            text : 'Source map: <a href="https://code.highcharts.com/mapdata/countries/fr/custom/fr-all-mainland.js">France, mainland</a>'
+        },
+
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
+
+        colorAxis: {
+            min: 30,
+            minColor: "#F1EEF6",
+            max: 45,
+            maxColor: "#4c0021"
+        },
+        series : [{
+            data : data,
+            mapData: Highcharts.maps['countries/fr/custom/fr-all-mainland'],
+            joinBy: 'hc-key',
+            name: 'Pourcentage de consommateurs hebdomadaires de vin',
+            states: {
+                hover: {
+                    color: '#BADA55'
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            }
+        }]
+    });
+});
+</script>

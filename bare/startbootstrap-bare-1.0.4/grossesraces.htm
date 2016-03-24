@@ -1,0 +1,43 @@
+		<script type="text/javascript">
+$(function () {
+    $('#grossesraces').highcharts({
+        title: {
+            text: 'Grosses Races Vs Alcolos',
+            x: -20 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        xAxis: {
+            categories: ['15-24', '25-34', '35-44', '45-54', '55-64', '+65']
+        },
+        yAxis: {
+            title: {
+                text: 'Pourcentage'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Alcolo (boit tout les jours)',
+            data: [1,4,7,9,16,25]
+        }, {
+            name: 'Grosse Race',
+            data: [41,34,21,11,5,2]
+        }]
+    });
+});
+		</script>
