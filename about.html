@@ -23,9 +23,11 @@
     }
 
     #container {
+    /*
     height: 600px; 
     min-width: 1000px; 
     max-width: 1000px; 
+    */
     margin: 0 auto; 
     }
     .loading {
@@ -33,6 +35,14 @@
     text-align: center;
     color: gray;
     }
+
+    .center {
+    margin: auto;
+    width: 100%;
+    <!--border: 3px solid #73AD21; -->
+    padding: 10px;
+    }
+
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -62,11 +72,77 @@
     <script src="//code.highcharts.com/maps/modules/map.js"></script>
     <script src="https://code.highcharts.com/maps/modules/data.js"></script>
     <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+
+<!-- Code de suivi -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74400559-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 <script src="https://code.highcharts.com/mapdata/countries/fr/custom/fr-all-mainland.js"></script>
+ <!-- FONT -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'  type='text/css'>
 
+</script>
+
+        <script> 
+    $(function(){
+      $("#frequences").load("frequences.html"); 
+    });
+    </script> 
+
+</head>
+
+<body style="margin:50px;padding:50px">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/index.html">ALCOOL &hearts;</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="about.html">A propos</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+
+<div style="text-align:center">
 Projet scolaire réalisé dans le cadre de notre troisième année à l'ENSAE.
 
+ <hr>
+
+<iframe width="1000" height="600"
+src="https://www.youtube.com/v/n4i_ms5C7kQ">
+</iframe>
+</div>
+
+
+</body>
 
 
 </html>

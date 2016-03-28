@@ -1,0 +1,256 @@
+		<script type="text/javascript">
+$(function () {
+    $('#grapheVS').highcharts({
+
+        chart: {
+            type: 'bubble',
+            plotBorderWidth: 1,
+            zoomType: 'xy'
+        },
+
+        legend: {
+            enabled: false	
+        },
+
+
+	
+	title: {
+            text: 'Biere Vs Vin'
+        },
+
+       
+
+        xAxis: {
+            gridLineWidth: 1,
+            title: {
+                text: "Pourcentage de vin dans la consommation d'alcool"
+            },
+            labels: {
+                format: '{value} %'
+            }
+            
+        },
+
+        yAxis: {
+            startOnTick: false,
+            endOnTick: false,
+            title: {
+                text: "Pourcentage de biere dans la consommantion d'alcool"
+            },
+            labels: {
+                format: '{value} %'
+            }
+           
+        },
+
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<table>',
+            pointFormat: '<tr><th colspan="1"><h3>{point.country}</h3></th></tr>' +
+                '<tr><th>Consommation totale:</th><td>{point.z}L/hab</td></tr>',
+            footerFormat: '</table>',	
+            followPointer: true
+        },
+
+        plotOptions: {
+	     bubble: {
+                minSize: 1,
+                maxSize: 50
+            },
+            series: {
+		 showCheckbox: true,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.country}'
+                }
+
+            }
+        },
+
+        series: [{
+            data: [
+                { x: 16, y: 57, z: 16.5,  country: 'Republique tchèque',  type:'bierre', },
+                { x: 40, y: 35, z: 16.3,  country: 'Hongrie' },
+                { x: 1, y: 33, z: 15.7,  country: 'Fédération Russe',  type:'spiritueux' },
+                { x: 7, y: 34, z: 15.6,  country: 'Estonie',  type:'spiritueux' },
+                { x: 7, y: 32, z: 15.6, country: 'Ukraine',  type:'spiritueux' },
+                { x: 22, y: 39, z: 15.3,  country: 'Roumanie',  type:'spiritueux' },
+                { x: 48, y: 39, z: 15.2,  country: 'Slovénie',  type:'vin' },
+                { x: 47, y: 37, z: 15.1,  country: 'Croatie',  type:'vin' },
+                { x: 55, y: 31, z: 14.6,  country: 'Portugal',  type:'vin' },
+                { x: 20, y: 53, z: 14.4,  country: 'Irlande',  type:'bierre' },
+                { x: 62, y: 17, z: 13.7,  country: 'France',  type:'vin' ,color:'red'},
+                { x: 39, y: 45, z: 13.4,  country: 'Danemark',  type:'bierre' },
+                { x: 30, y: 43, z: 13.4,  country: 'Royaume Uni ',  type:'bierre' },
+                { x: 13, y: 56, z: 13.3, country: 'Pologne',  type:'bierre' },
+                { x: 15, y: 36, z: 13.3, country: 'Slovaquie',  type:'spiritueux' },
+                { x: 32, y: 53, z: 13.2, country: 'Autriche',  type:'bierre' },
+                { x: 70, y: 14, z: 13, country: 'Luxembourg',  type:'vin' },
+                { x: 27, y: 53, z: 12.8, country: 'Allemagne',  type:'bierre' },
+                { x: 23, y: 46, z: 12.5, country: 'Finlande',  type:'bierre' },
+                { x: 22, y: 32, z: 12.4, country: 'Bulgarie',  type:'spiritueux' },
+                { x: 36, y: 45, z: 11.6, country: 'Espagne' },
+                { x: 22, y: 44, z: 11.1, country: 'Serbie',  type:'bierre' },
+                { x: 50, y: 31, z: 10.9, country: 'Suisse',  type:'vin' },
+                { x: 37, y: 57, z: 10.8, country: 'Belgique',  type:'bierre' },
+                { x: 49, y: 24, z: 10.8, country: 'Grèce',  type:'vin' },
+                { x: 73, y: 22, z: 10.7, country: 'Italie',  type:'vin' },
+                { x: 44, y: 39, z: 10.3, country: 'Suède',  type:'vin' },
+                { x: 34, y: 50, z: 10.1, country: 'Pays-Bas',  type:'bierre' }
+                //{ x: 4, y: 23, z: 9.6, country: 'Bosnie-Herzegovine',  type:'spiritueux' },
+                //{ x: 28, y: 36, z: 8.5, country: 'Macédoine',  type:'spiritueux' },
+                //{ x: 31, y: 47, z: 7.8, country: 'Norvège',  type:'bierre' },
+                //{ x: 28, y: 34, z: 4.3, country: 'Malte',  type:'spiritueux' },
+                //{ x: 5, y: 60, z: 3.4,  country: 'Turquie',  type:'bierre' }
+            ]
+        }]
+
+
+    });
+
+
+
+
+   $('#button').click(function () {
+        var chart = $('#grapheVS').highcharts();
+	chart.yAxis[0].setTitle({
+            text: "Pourcentage de biere dans la consommation d'alcool"
+        });
+	chart.xAxis[0].setTitle({
+            text: "Pourcentage de vin dans la consommation d'alcool"
+        });
+	chart.setTitle({text: "Biere Vs Vin"});
+        chart.series[0].setData([
+                { x: 16, y: 57, z: 16.5,  country: 'Republique tchèque',  type:'bierre' },
+                { x: 40, y: 35, z: 16.3,  country: 'Hongrie',  type:'vin' },
+                { x: 1, y: 33, z: 15.7,  country: 'Fédération Russe', type:'spiritueux' },
+                { x: 7, y: 34, z: 15.6,  country: 'Estonie',  type:'spiritueux' },
+                { x: 7, y: 32, z: 15.6, country: 'Ukraine',  type:'spiritueux' },
+                { x: 22, y: 39, z: 15.3,  country: 'Roumanie',  type:'spiritueux' },
+                { x: 48, y: 39, z: 15.2,  country: 'Slovénie',  type:'vin' },
+                { x: 47, y: 37, z: 15.1,  country: 'Croatie',  type:'vin' },
+                { x: 55, y: 31, z: 14.6,  country: 'Portugal',  type:'vin' },
+                { x: 20, y: 53, z: 14.4,  country: 'Irlande',  type:'bierre' },
+                { x: 62, y: 17, z: 13.7,  country: 'France',  type:'vin' },
+                { x: 39, y: 45, z: 13.4,  country: 'Danemark',  type:'bierre' },
+                { x: 30, y: 43, z: 13.4,  country: 'Royaume Uni ',  type:'bierre' },
+                { x: 13, y: 56, z: 13.3, country: 'Pologne',  type:'bierre' },
+                { x: 15, y: 36, z: 13.3, country: 'Slovaquie',  type:'spiritueux' },
+                { x: 32, y: 53, z: 13.2, country: 'Autriche',  type:'bierre' },
+                { x: 70, y: 14, z: 13, country: 'Luxembourg',  type:'vin' },
+                { x: 27, y: 53, z: 12.8, country: 'Allemagne',  type:'bierre' },
+                { x: 23, y: 46, z: 12.5, country: 'Finlande',  type:'bierre' },
+                { x: 22, y: 32, z: 12.4, country: 'Bulgarie',  type:'spiritueux' },
+                { x: 36, y: 45, z: 11.6, country: 'Espagne',  type:'bierre' },
+                { x: 22, y: 44, z: 11.1, country: 'Serbie',  type:'bierre' },
+                { x: 50, y: 31, z: 10.9, country: 'Suisse',  type:'vin' },
+                { x: 37, y: 57, z: 10.8, country: 'Belgique',  type:'bierre' },
+                { x: 49, y: 24, z: 10.8, country: 'Grèce',  type:'vin' },
+                { x: 73, y: 22, z: 10.7, country: 'Italie',  type:'vin' },
+                { x: 44, y: 39, z: 10.3, country: 'Suède',  type:'vin' },
+                { x: 34, y: 50, z: 10.1, country: 'Pays-Bas',  type:'bierre' }
+                //{ x: 4, y: 23, z: 9.6, country: 'Bosnie-Herzegovine',  type:'spiritueux' },
+                //{ x: 28, y: 36, z: 8.5, country: 'Macédoine',  type:'spiritueux' },
+                //{ x: 31, y: 47, z: 7.8, country: 'Norvège',  type:'bierre' },
+                //{ x: 28, y: 34, z: 4.3, country: 'Malte',  type:'spiritueux' },
+                //{ x: 5, y: 60, z: 3.4,  country: 'Turquie',  type:'bierre' }
+            ]);
+    });
+
+
+   $('#button1').click(function () {
+        var chart = $('#grapheVS').highcharts();
+	chart.yAxis[0].setTitle({
+            text: "Pourcentage de spiritueux dans la consommation d'alcool"
+        });
+	chart.xAxis[0].setTitle({
+            text: "Pourcentage de vin dans la consommation d'alcool"
+        });
+	chart.setTitle({text: "Alcool fort Vs Vin"});
+        chart.series[0].setData([
+                { x: 16, y: 24, z: 16.5,  country: 'Republique tchèque',  type:'bierre' },
+                { x: 40, y: 24, z: 16.3,  country: 'Hongrie',  type:'vin' },
+                { x: 1, y: 63, z: 15.7,  country: 'Fédération Russe',  type:'spiritueux' },
+                { x: 7, y: 57, z: 15.6,  country: 'Estonie',  type:'spiritueux' },
+                { x: 7, y: 61, z: 15.6, country: 'Ukraine',  type:'spiritueux' },
+                { x: 22, y: 39, z: 15.3,  country: 'Roumanie',  type:'spiritueux' },
+                { x: 48, y: 13, z: 15.2,  country: 'Slovénie',  type:'vin' },
+                { x: 47, y: 15, z: 15.1,  country: 'Croatie',  type:'vin' },
+                { x: 55, y: 10, z: 14.6,  country: 'Portugal',  type:'vin' },
+                { x: 20, y: 19, z: 14.4,  country: 'Irlande',  type:'bierre' },
+                { x: 62, y: 20, z: 13.7,  country: 'France',  type:'vin' },
+                { x: 39, y: 16, z: 13.4,  country: 'Danemark',  type:'bierre' },
+                { x: 30, y: 21, z: 13.4,  country: 'Royaume Uni ',  type:'bierre' },
+                { x: 13, y: 31, z: 13.3, country: 'Pologne',  type:'bierre' },
+                { x: 15, y: 49, z: 13.3, country: 'Slovaquie',  type:'spiritueux' },
+                { x: 32, y: 13, z: 13.2, country: 'Autriche',  type:'bierre' },
+                { x: 70, y: 16, z: 13, country: 'Luxembourg',  type:'vin' },
+                { x: 27, y: 20, z: 12.8, country: 'Allemagne',  type:'bierre' },
+                { x: 23, y: 28, z: 12.5, country: 'Finlande',  type:'bierre' },
+                { x: 22, y: 45, z: 12.4, country: 'Bulgarie',  type:'spiritueux' },
+                { x: 36, y: 13, z: 11.6, country: 'Espagne',  type:'bierre' },
+                { x: 22, y: 34, z: 11.1, country: 'Serbie',  type:'bierre' },
+                { x: 50, y: 18, z: 10.9, country: 'Suisse',  type:'vin' },
+                { x: 37, y: 6, z: 10.8, country: 'Belgique',  type:'bierre' },
+                { x: 49, y: 26, z: 10.8, country: 'Grèce',  type:'vin' },
+                { x: 73, y: 5, z: 10.7, country: 'Italie',  type:'vin' },
+                { x: 44, y: 17, z: 10.3, country: 'Suède',  type:'vin' },
+                { x: 34, y: 16, z: 10.1, country: 'Pays-Bas',  type:'bierre' }
+                //{ x: 4, y: 73, z: 9.6, country: 'Bosnie-Herzegovine',  type:'spiritueux' },
+                //{ x: 28, y: 36, z: 8.5, country: 'Macédoine',  type:'spiritueux' },
+                //{ x: 31, y: 20, z: 7.8, country: 'Norvège',  type:'bierre' },
+                //{ x: 28, y: 35, z: 4.3, country: 'Malte',  type:'spiritueux' },
+                //{ x: 5, y: 35, z: 3.4,  country: 'Turquie',  type:'bierre' }
+            ]);
+    });
+
+
+
+   $('#button2').click(function () {
+        var chart = $('#grapheVS').highcharts();
+	chart.yAxis[0].setTitle({
+            text: "Pourcentage de bierre dans la consommation d'alcool"
+        });
+	chart.xAxis[0].setTitle({
+            text: "Pourcentage de spiritueux dans la consommation d'alcool"
+        });
+	chart.setTitle({text: "Biere Vs Alcool fort"});
+        chart.series[0].setData([
+                { x: 24, y: 57, z: 16.5,  country: 'Republique tchèque',  type:'bierre' },
+                { x: 24, y: 35, z: 16.3,  country: 'Hongrie',  type:'vin' },
+                { x: 63, y: 33, z: 15.7,  country: 'Fédération Russe',  type:'spiritueux' },
+                { x: 57, y: 34, z: 15.6,  country: 'Estonie',  type:'spiritueux' },
+                { x: 61, y: 32, z: 15.6, country: 'Ukraine',  type:'spiritueux' },
+                { x: 39, y: 39, z: 15.3,  country: 'Roumanie',  type:'spiritueux' },
+                { x: 13, y: 39, z: 15.2,  country: 'Slovénie',  type:'vin' },
+                { x: 15, y: 37, z: 15.1,  country: 'Croatie',  type:'vin' },
+                { x: 10, y: 31, z: 14.6,  country: 'Portugal',  type:'vin' },
+                { x: 19, y: 53, z: 14.4,  country: 'Irlande',  type:'bierre' },
+                { x: 20, y: 17, z: 13.7,  country: 'France',  type:'vin' },
+                { x: 16, y: 45, z: 13.4,  country: 'Danemark',  type:'bierre' },
+                { x: 21, y: 43, z: 13.4,  country: 'Royaume Uni ',  type:'bierre' },
+                { x: 31, y: 56, z: 13.3, country: 'Pologne',  type:'bierre' },
+                { x: 49, y: 36, z: 13.3, country: 'Slovaquie',  type:'spiritueux' },
+                { x: 13, y: 53, z: 13.2, country: 'Autriche',  type:'bierre' },
+                { x: 16, y: 14, z: 13, country: 'Luxembourg',  type:'vin' },
+                { x: 20, y: 53, z: 12.8, country: 'Allemagne',  type:'bierre' },
+                { x: 28, y: 46, z: 12.5, country: 'Finlande',  type:'bierre' },
+                { x: 45, y: 32, z: 12.4, country: 'Bulgarie',  type:'spiritueux' },
+                { x: 13, y: 45, z: 11.6, country: 'Espagne',  type:'bierre' },
+                { x: 34, y: 44, z: 11.1, country: 'Serbie',  type:'bierre' },
+                { x: 18, y: 31, z: 10.9, country: 'Suisse',  type:'vin' },
+                { x: 6, y: 57, z: 10.8, country: 'Belgique',  type:'bierre' },
+                { x: 26, y: 24, z: 10.8, country: 'Grèce',  type:'vin' },
+                { x: 5, y: 22, z: 10.7, country: 'Italie',  type:'vin' },
+                { x: 17, y: 39, z: 10.3, country: 'Suède',  type:'vin' },
+                { x: 16, y: 50, z: 10.1, country: 'Pays-Bas',  type:'bierre' }
+                //{ x: 73, y: 23, z: 9.6, country: 'Bosnie-Herzegovine',  type:'spiritueux' },
+                //{ x: 36, y: 36, z: 8.5, country: 'Macédoine',  type:'spiritueux' },
+                //{ x: 20, y: 47, z: 7.8, country: 'Norvège',  type:'bierre' },
+                //{ x: 35, y: 34, z: 4.3, country: 'Malte',  type:'spiritueux' },
+                //{ x: 35, y: 60, z: 3.4,  country: 'Turquie',  type:'bierre' }
+            ]);
+    });
+});
+	</script>	
+
