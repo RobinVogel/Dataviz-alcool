@@ -12,7 +12,8 @@ ${demo.css}
 $(function () {
     $('#container').highcharts({
         chart: {
-            type: 'column'
+		type: 'column'
+		
         },
         title: {
             text: 'Consommation mondiale de spiritueux'
@@ -67,7 +68,7 @@ $(function () {
             }
         },
         series: [{
-            
+            showInLegend: false,
             data: [4400, 1470 ,860,440,230]
 
         }]
