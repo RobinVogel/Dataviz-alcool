@@ -43,6 +43,11 @@
     padding: 10px;
     }
 
+    .commentaires {
+	font-size: 15pt;
+	text-align: center	
+    }
+
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -135,7 +140,38 @@
 <h1 style="font-size:400%;font-weight: bold">ALCOOL &hearts;</h1>
 <div style="font-size:150%;" > Des chiffres à consommer sans modération. </div>
 </div>
- <hr>
+
+<hr>
+<div class="commentaires">
+	Tout d'abord, la question que l'on se pose tous : <br>
+	En europe, qui compte-t-on parmi les plus gros buveurs ? <br>
+<br>
+Un indice ?
+
+<br>
+
+<button	onclick="ShowHint()">oui</button>
+
+
+<script>
+function ShowHint() {
+    document.getElementById("hint").style.display ="block" 
+}
+</script>
+
+<div id="hint" style="display:none"> 
+<br>
+OK.
+<br>
+<br>
+
+
+ <img  align="middle" src="depardieu.jpg"></img> 
+ </div>
+ 
+ </div>
+
+<hr>
 
  <script>
 $(function(){
@@ -147,6 +183,25 @@ $("#mapEurope").load("mapEurope.html");
 </div>
 <!-- /.row -->
  <hr>
+
+<div class="commentaires">
+Bon d'accord, mais les français boivent du vin, c'est un peu fait dans une démarche culturelle.
+<br>
+C'est pour préserver cet amour du terroir qu'on nous a transmis dès le plus jeune âge.
+<br>
+<br>
+
+ <img  align="middle" src="cartetresor.png"></img> 
+ <br>
+ <br>
+Le type de boisson dépend finalement beaucoup du pays !
+</div>
+
+<hr>
+
+
+
+
 <div>
 <script>
 $(function(){
@@ -157,28 +212,29 @@ $("#grapheVS").load("grapheVS.html");
 <div id="grapheVS"  class="center" style="height: 400px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
 <div style="text-align: center">
 
-<button id="button" class="autocompare"> Vin Vs Biere</button>
-<button id="button1" class="autocompare"> Vin Vs Alcool forts </button>
-<button id="button2" class="autocompare"> Alcool forts Vs Biere </button>
+<button id="button" class="autocompare"> Vin contre biere</button>
+<button id="button1" class="autocompare"> Vin contre alcool forts </button>
+<button id="button2" class="autocompare"> Alcool forts contre biere </button>
 </div>
 </div>        
 
  <hr>
 
+<div class="commentaires">
+Au risque d'enfoncer des portes ouvertes, on remarque aussi que les hommes boivent plus souvent que les femmes.
+<div>
+
+ <hr>
 <div id="frequences" class="center" ></div>
 </div>
 
- <hr>
-<div id="grossesraces" class="center" ></div>
-
-<script>
-$(function(){
-$("#grossesraces").load("grossesraces.htm");
-});
-</script>
 
  <hr>
+<div class="commentaires">
+Mais qu'est-ce qu'elles boivent donc ?
+<div>
 
+	<hr>
 <div style="width: 100%; overflow: hidden;text-align: center" >
     <div style="width: 600px;float: left; "> 
 
@@ -194,14 +250,28 @@ $("#grossesraces").load("grossesraces.htm");
     <div style="margin-left: 620px;">  <img  align="middle" src="white_girl_rose.jpg"></img> </div>
 </div>
 
+<hr>
+De toutes façon les jeunes boivent trop c'est bien connu.
+<br>
+Heuresement qu'ils boivent moins souvent...
 
  <hr>
+<div id="grossesraces" class="center" ></div>
 
+<script>
+$(function(){
+$("#grossesraces").load("grossesraces.html");
+});
+</script>
+
+<br>
+
+<hr>
 
 
 <div class="text-center" >
 <div style="font-size:200%;font-weight: bold">
-Choisis ton camp !
+Enfin bref, Choisis ton camp !
 <br><br>
 </div>
 
